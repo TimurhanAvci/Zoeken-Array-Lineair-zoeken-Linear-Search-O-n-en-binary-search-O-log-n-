@@ -1,6 +1,12 @@
 <?php
 // Lineair en binair zoeken in een gesorteerde array, inclusief tijdmeting
 
+// In de browser (bijvoorbeeld via WAMP) tonen als platte tekst,
+// zodat de regels en kolommen netjes onder elkaar blijven staan
+if (php_sapi_name() !== 'cli') {
+    header('Content-Type: text/plain; charset=utf-8');
+}
+
 // Lineair zoeken: loopt van het eerste tot het laatste element
 // en stopt zodra het target gevonden is. Tijdcomplexiteit: O(n)
 function linearSearch(array $array, int $target): bool
